@@ -10,9 +10,8 @@
  */
 
 #include <kos.h>
-/* #include <sndserver.h> */
 #include <assert.h>
-#include <vorbis/vorbisfile.h>
+#include <oggvorbis/oggvorbisfile.h>
 #include "misc.h"
 
 /* Enable this #define to do timing testing */
@@ -61,7 +60,7 @@ static int sndoggvorbis_queue_enabled;		/* wait in STATUS_QUEUED? */
 static volatile int sndoggvorbis_loop;		/* current looping mode */
 static volatile int sndoggvorbis_status;	/* current status of thread */
 static volatile int sndoggvorbis_bitrateint;	/* bitrateinterval in calls */
-static semaphore_t *&sndoggvorbis_halt_sem;	/* semaphore to pause thread */
+static semaphore_t sndoggvorbis_halt_sem;	/* semaphore to pause thread */
 static char sndoggvorbis_lastfilename[256];	/* filename of last played file */
 static int current_section;
 static int sndoggvorbis_vol = 240;
