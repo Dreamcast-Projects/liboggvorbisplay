@@ -11,7 +11,7 @@
 
 #include <kos.h>
 #include <assert.h>
-#include <oggvorbis/oggvorbisfile.h>
+#include <vorbis/vorbisfile.h>
 #include "misc.h"
 
 /* Enable this #define to do timing testing */
